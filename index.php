@@ -13,7 +13,8 @@
     <div ID="tag_line"><p>mostly text based personal site served on my home server</p></div>
     <div ID="main_menue">
       <a href="http://rohitfarmer.ddns.net">Home</a> |
-      <a href="">Blog</a>
+      <a href="">Blog</a> | 
+      <a href="pages/CV.html">CV</a>
     </div>
     <div ID="intro">
       <p><img ID="mypic" src="images/myphoto.jpg" alt="Rohit Farmer's Photograph" />
@@ -31,12 +32,22 @@
   <hr>
   <div ID="homeserver">
     <h2>Home Server Specifications</h2>
-    <p><img ID="serverpic" src="images/homeserver.jpg" alt="Homeserver Photograph" />
+    <p><img class="zoom" ID="serverpic" src="images/homeserver.jpg" alt="Homeserver Photograph" />
       This website is running on Debian 10 (buster) installed on an old Dell Optiplex all in one desktop with a fourth-generation Intel Core i7 CPU, 16 Gb of RAM, and a 256 Gb Adata SSD. This desktop computer has an interesting story behind it. One of my friends at WashU was using it as an external monitor because it lacked a hard disk. I am presuming that he got it as a clearance computer from an organization that took the hard disk out. And while we were shifting homes, he gave this computer to me for free thinking that it's useless.</p>
 
     <p>I like Dell Optiplex machines as they are cheap, robust and I never had any issues in installing and running linux on them. They are good for home servers as they are not as loud as proper server grade systems and also not too power hungry. I also use this machine for regular desktop purposes if I am not using my laptop. It is wired to a 300 mbps broadband connection.</p>
-    <br clear="left";>
+    
+    <?php 
+      $load = sys_getloadavg();
+      echo "<b>Average server load in the last minute: ", ($load[0]/8)*100, "%</b><br/>";
+      $time_zone = date_default_timezone_get();
+      $timestamp = time();
+      $date_time = date("d-m-Y (D) H:i:s", $timestamp);
+      echo "<b>Current date and local time on the server: $date_time $time_zone</b>";
+    ?> 
+    <br clear="left">
   </div>
+
   <div>
     <hr>
     <p style="text-align: center;"> &copy; 2020 Rohit Farmer</p>

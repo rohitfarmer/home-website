@@ -1,0 +1,236 @@
+% LaTeX resume using res.cls
+%\documentclass{article}
+\documentclass[10pt]{article} 
+\usepackage{url}
+\usepackage{tweaklist}
+\usepackage{etaremune}
+\usepackage[cm]{fullpage}
+\usepackage[resetlabels]{multibib}
+\usepackage[ManyBibs,TextAligned]{currvita}
+\usepackage{tabularx}
+\usepackage{calc}
+\usepackage{microtype}
+\usepackage[symbol,para,bottom]{footmisc}
+%\hyphenpenalty=100000
+\clubpenalty = 10000 
+\widowpenalty = 10000
+
+\usepackage{charter}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\newenvironment{sublist}{%
+	\begin{list}{}{%
+		\setlength{\itemsep}{0em}\setlength{\parsep}{0em}%
+		\setlength{\topsep}{0em}\setlength{\parskip}{0em}%
+	}%
+}%
+{ \end{list} }
+
+% Better for lists with more than 2 items and/or long descriptions
+\newenvironment{subbulletlist}{%
+	\begin{list}{\labelitemii}{%
+		\setlength{\topsep}{\itemsep}\setlength{\parskip}{\parsep}%
+	}%
+}%
+{ \end{list} }
+
+\setlength{\parskip}{0em}
+
+\newcites{journal}{foo}
+%\newcites{conference}{foo}
+%\newcites{media}{foo}
+\bibliographystylejournal{unsrt_swami}
+%\bibliographystylemedia{unsrt_swami}
+%\bibliographystyleconference{unsrt_swami}
+
+%\setlength{\labelsep}{.5em}
+
+
+% Better for lists with 1-2 items and short descriptions
+
+\begin{document}
+
+%\name{\textbf{}}
+%\address{\url{}}
+\settowidth{\cvlabelwidth}{% 
+\cvlabelfont 2009-2009% 
+}% 
+\begin{cv}{\huge \it \bfseries Rohit Farmer}
+\vskip3pt
+\hrule\hrule
+\vskip3pt
+\hfill \url{rohit.farmer@gmail.com},  \url{https://rohitfarmer.github.io}, \url{+1 (314)-255-6763}, \url{Bethesda, } \url{MD, USA}
+
+{
+\setlength{\cvlabelsep}{0mm}
+\setlength{\cvlabelwidth}{0mm}
+\begin{cvlist}{Research Summary}
+	\item Ten years' experience in interdisciplinary research, applying computational methods at the intersection of biology, chemistry, and medicine. My most recent research experience includes the application of “deep learning” to large-scale molecular data to understand drug bioactivation and toxicity. In the past I have worked with protein structure/complex prediction, modelling protein-protein interactions, molecular dynamics simulations, virtual screening, and sequence analysis. In my current position at CHI, NIH I am building expertise in single cell data analysis on multiple platforms. 
+\end{cvlist}
+}
+
+\begin{cvlist}{Teaching \& Research Experience}
+	\item[2019-\emph{now}] Computational Biologist \hfill National Institutes of Health\\ \hspace*{\fill} Center for Human Immunology
+	\item[2018-2019] Postdoctoral Research Associate \hfill Washington University in St. Louis, USA\\  \hspace*{\fill} Department of Pathology and Immunology
+	\item[2008-2019] Assistant Professor \hfill Sam Higginbottom University of Agri., Tech. and Sci. (SHUATS), India\\  \hspace*{\fill} Department of Computational Biology and Bioinformatics (CBBI)
+	%\item[2008-2011] Assistant Professor \hfill SHUATS, India\\  \hspace*{\fill} CBBI
+	\item[2016-2018] Associate Editor \hfill The Allahabad Journal of Science and Technology \\  \hspace*{\fill} (Formerly The Allahabad Farmer)
+\end{cvlist}
+
+\begin{cvlist}{Administrative Experience}
+	\item[2015-2016] International Training Associate \hfill SHUATS, India \\  \hspace*{\fill} Directorate of International Education and Training
+\end{cvlist}
+
+\begin{cvlist}{Teaching Assignments}
+	\item[2008] Molecular Genetics (UG, MBGE-441) \hfill SHUATS, India 
+	\item[2009-2011] Biomolecular Modelling (UG, BI-605)  \hfill SHUATS, India
+	\item[2012-2014] \emph{Assisted in teaching} Physical Biochemistry (UG, Bio143) \hfill University of Birmingham, UK
+	\item[2015-2017] Concepts of Bioinformatics (UG, CBBI-502) \hfill SHUATS, India 
+	\item[2015-2017] Structural Bioinformatics (UG, CBBI-601)  \hfill SHUATS, India 
+	\item[2015-2017] Fundamentals of Bioinformatics and Information Technology (PG, CBBI-701) \hfill SHUATS, India
+	\item[2015-2017] Computer Aided Drug Designing (PG, CBBI-803) \hfill SHUATS, India
+\end{cvlist}
+
+\begin{cvlist}{Education}
+	\item[2011-2015] Doctor of Philosophy (Ph.D.) \hfill University of Birmingham, UK \\ Biosciences
+	\item[2008-2010] Master of Technology (M.Tech.) \hfill Sam Higginbottom Institute of Agri., Tech. and Sci. (SHIATS), India  \\ Bioinformatics \emph{CGPA 9.35/10; Silver Medal}
+	\item[2004-2008] Bachelor of Technology (B.Tech.) \hfill Allahabad Agricultural Institute, India  \\ Biotechnology \emph{CGPA 8.41/10}
+\end{cvlist}
+
+\begin{cvlist}{Certifications}
+        \item[2019] Deep Learning with Python and Keras \hfill Udemy
+        \item[2019] Python for Data Science and Machine Learning Bootcamp \hfill Udemy
+        \item[2017] Algorithms for DNA Sequencing \hfill Johns Hopkins University, USA  \\ \hspace*{\fill} Coursera
+	\item[2017] Python for Genomic Data Science \hfill Johns Hopkins University, USA  \\ \hspace*{\fill} Coursera
+\end{cvlist}
+
+%\newpage
+\begin{cvlist}{Awards \& Achievements}
+	\item[2014] Travel grant, $28^{th}$ Annual Symposium of The Protein Society, USA \hfill Biochemical Society
+	\item[2013] Travel grant, $15^{th}$ EMBL PhD Symposium, Germany \hfill EMBL
+	\item[2013] Travel grant, ISMB/ECCB'13, Germany \hfill National Science Foundation
+	\item[2013] George Parks travel grant,  Molecular Perspectives On Protein-Protein Interactions, Poland \hfill University of \\ \hspace*{\fill} Birmingham
+	\item[2012] Travel grant, ECCB'12, Switzerland \hfill Swiss Foundation for Excellence and \\ \hspace*{\fill} Talent in Biomedical Research
+	\item[2011-2014] PhD scholarship \hfill The Darwin Trust of Edinburgh
+	\item[2010] Silver medal in M.Tech. Bioinformatics \hfill SHIATS
+\end{cvlist}
+
+%\newpage
+\vskip3pt
+\begin{cvlist}{Key Scientific Skills}
+	\item[\textbf{Computational Biology:}] Molecular structure prediction,	molecular docking, molecular dynamics simulation, bioinformatics
+	\item[\textbf{Experimental Biology:}] PCR, Gibson assembly, restriction digestion, plasmid transformation, microbiology techniques, 
+	HPLC
+	\item[\textbf{Operating Systems:}] Linux, Mac OS X, MS Windows
+	\item[\textbf{Computer Languages (Proficient):}] Python, Perl
+	\item[\textbf{Computer Languages (Familiar):}] C++, R, \LaTeX, HTML, CSS, Java Script
+	\item[\textbf{Data Science and ML Tools:}] NumPy, Pandas, SciPy, Matplotlib, Seaborn, Plotly, Scikit Learn, Keras, TensorFlow
+	\item[\textbf{Database:}] SQLite, Neo4J
+	\item[\textbf{HPC:}] SLURM, PBS
+	\item[\textbf{Containers \& VMs:}] Docker, Singularity, Oracle Virtual Box
+	\item[\textbf{VCS:}] Git, Mercurial
+\end{cvlist}
+
+\vskip3pt
+\begin{cvlist}{Transferable Skills Training}
+	\item[2018] Mentorship Training Program \hfill Washington University in Saint Louis, USA
+	\item[2018] Mentoring Undergraduate Research \hfill Washington University in Saint Louis, USA
+	\item[2012] Leading Academics, Leadership development program \hfill University of Birmingham, UK
+	\item[2012] One day course on Poster Presentations: Planning the Content \hfill University of Birmingham, UK
+	\item[2012] Talent Pool, Training program on entrepreneurship \hfill University of Birmingham, UK
+	\item[2012] One day course on Speed Reading \hfill University of Birmingham, UK
+	\item[2011] One day course on Time Management \hfill University of Birmingham, UK
+\end{cvlist}
+
+\vskip3pt
+\begin{cvlist}{Conferences Attnded \& Organised}
+        \item[2019] Symposium on Personal Control of Genomic Data for Research, USA \hfill Participant 
+        \item[2019] FOCIS 2019, USA \hfill Participant
+        \item[2015] National Conference on Bioinformatics Panorama in Agriculture and Health, India \hfill Sponsor Liaison
+	\item[2014] $1^{st}$ RSG-UK Student Symposium on Computational Biology and Life Sciences, UK \hfill Secretary
+	\item[2014] Synthetic Biology of Antibiotic Production II, Spain \hfill Short Talk
+	\item[2014] The $28^{th}$ Annual Symposium of the Protein Society, USA, \hfill Poster Presentation
+	\item[2013] $15^{th}$ EMBL PhD Symposium, Germany \hfill Short Talk
+	\item[2013] ISMB/ECCB'13, Germany \hfill Poster Presentation
+	\item[2013] Molecular Perspectives On Protein-Protein Interactions, Poland \hfill Poster Presentation
+	\item[2012] $11^{th}$ European Conference on Computational Biology, Switzerland \hfill Poster Presentation
+	\item[2012] $3^{rd}$ BEAR Postgraduate Conference on Research Computing, UK \hfill Secretary and Sponsor Liaison
+	\item[2010] The Eighth Asia Pacific Bioinformatics Conference, India \hfill Poster Presentation
+	\item[2009] National Workshop on Functional Genomics and Proteomics, India \hfill Participant
+	\item[2009] International Conference on Open Source for Computer Aided Drug Discovery, India \hfill Poster Presentation
+\end{cvlist}
+
+\vskip3pt
+\begin{cvlist}{Professional Memberships}
+	\item[2013-2014] The Protein Society
+	\item[2012-2015] International Society for Computational Biology (ISCB)
+	\item[2012-2015] Biochemical Society
+\end{cvlist}
+
+%\newpage
+\vskip3pt
+\begin{cvlist}{Extra Curricular Positions Held}
+	\item[2013-2014] Co-Founder and Secretary, Regional Student Group, UK \hfill Student Council, ISCB
+	\item[2011-2012] Secretary, Bharat Parivar, Guild of Students \hfill University of Birmingham
+	\item[2009-2010] Vice president for Society of Biotechnology \hfill SHIATS
+\end{cvlist}
+
+\renewenvironment{thebibliography}[1]{
+\setlength{\topsep}{0em}
+\setlength{\labelsep}{.5em}
+\begin{etaremune}{
+\setlength{\itemsep}{0.5em}}
+}{\end{etaremune}}
+\renewcommand{\bibitem}[1]{\item}
+
+%\settowidth{\cvlabelwidth}{\cvlabelfont XXXX}% 
+\setlength{\cvlabelsep}{0mm}
+\setlength{\cvlabelwidth}{0mm}
+\renewcommand{\labelitemi}{}
+
+\vspace{1em}
+
+\begin{cvlist}{Publications}
+
+\item {\begin{itemize}\item{\bf Rohit Farmer}. Modelling polyketide synthases and related macromolecular complexes. \emph{PhD Thesis. University of Birmingham,} 2015. \url{http://etheses.bham.ac.uk/5909/} \end{itemize}}
+
+\vskip3pt
+\item {\textbf{Book Chapter}}
+\item {\begin{itemize}\item{\bf Farmer R.}\footnote{Corresponding Author}, Thomas C. M., and Winn P. J. Modelling Polyketide Synthases and Similar Macromolecular Complexes. \emph{In: Wadhwa G., Shanmughavel P., Singh A., Bellare J. (eds) Current trends in Bioinformatics: An Insight. Springer, Singapore,} 2018, 121-144. \url{https://doi.org/10.1007/978-981-10-7483-7_7} \end{itemize}}
+
+\vskip3pt
+\item {\bf Refereed Journal Articles}
+\item {\textit{Google Scholar: h-index 8, i10-index 8,} \url{http://bit.ly/rf_cite}}
+\vskip3pt
+\nocitejournal{Ward2019}
+\nocitejournal{Farmer2019}
+\nocitejournal{Dhusia2018}
+\nocitejournal{Konda2017}
+\nocitejournal{Khanim2014}
+\nocitejournal{Lodhi2014}
+\nocitejournal{Haines2013}
+\nocitejournal{Singh2013}
+\nocitejournal{Kumar2013}
+\nocitejournal{Paital2013}
+\nocitejournal{Gautam2012}
+\nocitejournal{Fazil2012}
+\nocitejournal{Kumari2012}
+\nocitejournal{Lodhi2012}
+\nocitejournal{Paital2011}
+\nocitejournal{Jeyakumar2011}
+\nocitejournal{Farmer2010}
+\item{\bibliographyjournal{citations} }
+
+
+\vskip3pt
+\item {\textbf{Preprint}}
+\item {\begin{itemize}\item Hassan M.,  Rahman F., \textbf{Farmer, R}., Das S., and Vayani F. Highlights of the $1^{st}$ Student Symposium of the ISCB RSG UK. \emph{F1000Research}, 4, 2015. \url{https://doi.org/10.12688/f1000research.6616.1} \end{itemize}}
+
+\end{cvlist}
+\end{cv}
+\end{document}

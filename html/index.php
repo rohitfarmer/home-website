@@ -48,11 +48,16 @@
   <hr>
   <div ID="homeserver">
     <h2>Home Server Specifications</h2>
-    <p> This website is running on A Raspberry Pi 3 B Plus with Raspbian OS. In addition to this website, it's also hosting Calibre e-book server and Plex media server. </p>
+    System: A Raspberry Pi 3 B Plus with Raspbian OS.
+    <h3>Servers</h3>
+    <ol>
+      <li>NGINX for this website and reverse proxy</li>
+      <li>Calibre for e-books</li>
+      <li>Plex for movies, music, and audiobooks</li>
+      <li>Lychee (docker) for photopgraphy portfolio</li>
+    </ol>  
 
-
-    <?php echo 'Hello World'; ?> 
-
+    <h3>Server Load</h3>
     <?php 
       $load = sys_getloadavg();
       echo "<b>Average server load in the last minute: ", ($load[0]/8)*100, "%</b><br/>";
@@ -66,7 +71,7 @@
 
   <div>
     <hr>
-    <p style="text-align: center;"> &copy; 2020 Rohit Farmer</p>
+    <p style="text-align: center;"> &copy; <?php $year = date("Y"); echo $year; ?> Rohit Farmer</p>
   </div>
 
 </body>

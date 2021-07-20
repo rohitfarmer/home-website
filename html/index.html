@@ -50,14 +50,8 @@
     <h2>Home Server Specifications</h2>
     <p> This website is running on A Raspberry Pi 3 B Plus with Raspbian OS. In addition to this website, it's also hosting Calibre e-book server and Plex media server. </p>
 
-    <?php 
-      $load = sys_getloadavg();
-      echo "<b>Average server load in the last minute: ", ($load[0]/8)*100, "%</b><br/>";
-      $time_zone = date_default_timezone_get();
-      $timestamp = time();
-      $date_time = date("d-m-Y (D) H:i:s", $timestamp);
-      echo "<b>Current date and local time on the server: $date_time $time_zone</b>";
-    ?>
+
+    <?php echo "Hello World" ?>
     <br clear="left">
   </div>
 

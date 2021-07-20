@@ -49,7 +49,7 @@
   <div ID="homeserver">
     <h2>Home Server Specifications</h2>
     System: A Raspberry Pi 3 B Plus with Raspbian OS.
-    <h3>Servers</h3>
+    <h3>Services</h3>
     <ol>
       <li>NGINX for this website and reverse proxy</li>
       <li>Calibre for e-books</li>
@@ -71,7 +71,7 @@
 
   <div>
     <hr>
-    <p style="text-align: center;"> &copy; <?php $year = date("Y"); echo $year; ?> Rohit Farmer</p>
+    <p style="text-align: center;"> &copy; 2020 - <?php $year = date("Y"); echo $year; ?> Rohit Farmer</p>
   </div>
 
 </body>

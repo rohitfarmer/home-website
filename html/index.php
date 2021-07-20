@@ -52,6 +52,15 @@
 
 
     <?php echo 'Hello World'; ?> 
+
+    <?php 
+      $load = sys_getloadavg();
+      echo "<b>Average server load in the last minute: ", ($load[0]/8)*100, "%</b><br/>";
+      $time_zone = date_default_timezone_get();
+      $timestamp = time();
+      $date_time = date("d-m-Y (D) H:i:s", $timestamp);
+      echo "<b>Current date and local time on the server: $date_time $time_zone</b>";
+    ?>
     <br clear="left">
   </div>
 
